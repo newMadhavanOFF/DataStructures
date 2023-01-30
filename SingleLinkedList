@@ -6,7 +6,7 @@
 
 -> Example
 
-public class LinkedList{
+public class SinglyLinkedList{
      private Node first=null;
      private Node last=null;
      private int count=0;
