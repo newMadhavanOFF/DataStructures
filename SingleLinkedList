@@ -1,0 +1,86 @@
+--SINGLY LINKED LIST--
+
+-> Linked List can be defined as a collection of objects called nodes that are randomly stored in the memory.
+-> A node contains two fields one is data and another one is address of the next node.
+-> The last node of the list contains the pointer to the null.
+
+-> Example
+
+public class LinkedList{
+     private Node first=null;
+     private Node last=null;
+     private int count=0;
+  public void add(object e){
+  if(first==null){
+      first=new Node(e,null);
+      last=first;
+      count++;
+      return;
+     }
+  last.next=new Node(e,null);
+  last=last.next;
+  count++;
+}
+// add method to insert data
+public void add(int index, object e){
+  if(index<=-1||index>=size()){
+  throw new IndexOutOfBoundException();
+  }
+  if(index==0){
+    first=new Node(e,first);
+    count++;
+    return;
+    }
+    Node curr=first;
+    for(int i=1;i<index;i++){
+        curr=curr.next;
+      } 
+  curr.next=new Node(e,curr.next);
+  count++;
+ }
+ public object get(int index){
+    if(index<=-1||index>=size()){
+    throw new IndexOutOfBoundException();
+    }
+    Node curr=first;
+    for(int i=1;i<index;i++){
+      curr=curr.next;
+      }
+       return curr.ele;
+       }
+       public int size(){
+         return count;
+        }
+     }
+  public void remove(int index){
+     if(index<=-1||index>=size()){
+       throw new IndexOutOfBoundException();
+      }
+      // First Node remove here
+      if(index==0){
+        first=first.next;
+        count--;
+        return;
+       }
+       // Other Nodes get remove
+       Node curr=first;
+       for(int i=1;i<index;i++){
+          curr=curr.next;
+          }
+          curr.next=curr.next.next;
+          count--;
+        }
+  public void reverse(){
+     Node prev=null,curr=first,next=null;
+     while(curr!=null){
+     next=curr.next;
+     curr.next=prev;
+     prev=curr;
+     curr=next;
+     }
+     first=prev;
+   }
+  } 
+       
+     
+     
