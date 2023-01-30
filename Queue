@@ -1,0 +1,54 @@
+--Queue--
+
+-> A queue can be defined as an ordered list which enables insert operations to be performed at one end called REAR and delete operations to be performed at another end called FRONT.
+-> Queue is referred to be as First In First Out list.
+-> For example, people waiting in line for a rail ticket form a queu Ne.
+
+public class Queue{
+     private Node first=null;
+     private int count=0;
+public void add(object e){
+     if(first==null){
+        first=new Node(e, null);
+        count++;
+        return;
+      }
+      Node curr=first;
+      while(curr.next!=null){
+        curr=curr.next;
+       }
+       curr.next=new Node(e, null);
+       count++;
+      }
+      public int size(){
+        return count;
+      }
+  public boolean isEmpty(){
+     return first==null;
+    }
+  public object peek(){
+     if(first==null) return null;
+     return first.ele;
+   }
+   public object poll(){
+        if(first==null) return null;
+        object e=first.ele;
+        first=first.next;
+        count--;
+        return e;
+      }
+    
+    //Demonstration
+    
+    public class Demo{
+      public static void main(String[] args){
+          Queue q=new Queue();
+          q.add(10);
+          q.add(30);
+          q.add(40);
+          while(!q.isEmpty()){
+            System.out.println(q.poll());
+          }
+        }
+     
+     }}  
