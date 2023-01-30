@@ -1,0 +1,10 @@
+ --Doubly linked list--
+ 
+-> The linked list is a linear data structure which can be described as the collection of node.
+-> Doubly linked list consists of three fields:
+  ->  Data represents the data value stored in the node.
+  ->  Previous represents a pointer that points to the previous node.
+  ->  Next represents a pointer that points to next node in the list.
+ 
+ -> Example:
+ public 
